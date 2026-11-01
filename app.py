@@ -129,7 +129,7 @@ with tab2:
     )
 
     imp = pd.DataFrame({
-        "Variable": metadata["rf_features"],
+        "Variable": metadata["features_random_forest"],
         "Importancia": model.feature_importances_,
     }).sort_values("Importancia", ascending=False)
 
