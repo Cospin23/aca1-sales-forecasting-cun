@@ -1,0 +1,81 @@
+{
+  "dataset_rows": 9800,
+  "dataset_columns": 18,
+  "postal_code_nulls": 11,
+  "exact_duplicates": 0,
+  "date_min": "2015-01-03",
+  "date_max": "2018-12-30",
+  "weekly_rows": 209,
+  "model_rows": 157,
+  "train_rows": 125,
+  "test_rows": 32,
+  "features_random_forest": [
+    "year",
+    "month",
+    "quarter",
+    "weekofyear",
+    "lag_1",
+    "lag_2",
+    "lag_4",
+    "lag_8",
+    "lag_13",
+    "lag_26",
+    "lag_52",
+    "rolling_mean_4",
+    "rolling_mean_8",
+    "rolling_mean_13"
+  ],
+  "features_linear_cyclical": [
+    "year",
+    "month",
+    "quarter",
+    "weekofyear",
+    "month_sin",
+    "month_cos",
+    "week_sin",
+    "week_cos",
+    "lag_1",
+    "lag_2",
+    "lag_4",
+    "lag_8",
+    "lag_13",
+    "lag_26",
+    "lag_52",
+    "rolling_mean_4",
+    "rolling_mean_8",
+    "rolling_mean_13"
+  ],
+  "baseline": {
+    "MAE": 6916.74625,
+    "RMSE": 7914.516213604047,
+    "R2": -0.09296496707454693
+  },
+  "linear_regression_cyclical": {
+    "MAE": 5032.2396788972455,
+    "RMSE": 6285.683376408747,
+    "R2": 0.31061394025224287
+  },
+  "random_forest_initial": {
+    "MAE": 5308.593149953125,
+    "RMSE": 6586.78643384594,
+    "R2": 0.2429846946711065
+  },
+  "gradient_boosting": {
+    "MAE": 5953.262952860766,
+    "RMSE": 7195.275464489266,
+    "R2": 0.09665770266168949
+  },
+  "random_forest_optimized": {
+    "MAE": 5349.134009006426,
+    "RMSE": 6675.787934388298,
+    "R2": 0.22238870542448252
+  },
+  "random_forest_cv_mae": 4196.670271941997,
+  "best_params": {
+    "max_depth": 5,
+    "max_features": 0.7,
+    "min_samples_leaf": 1,
+    "n_estimators": 500
+  },
+  "selection_rationale": "Random Forest optimizado seleccionado por su mejor desempeño promedio en validación temporal (TimeSeriesSplit), aunque la Regresión Lineal con variables cíclicas obtuvo menor MAE en el bloque test."
+}
